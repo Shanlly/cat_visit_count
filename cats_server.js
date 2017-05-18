@@ -5,12 +5,13 @@ var fs = require('fs');
 //create a server on my computer
 var server = http.createServer(function(req, res) {
 	console.log(req.url);
-	//dealing with incoming requests
+		var count = 0;
+//dealing with incoming requests
 	if (req.url === "/") {
 		cats('./cat_page.html',res);
 		countCatVisits('./count_cat_visits.html',res);
-	} else if (req.url === "/hi") {
-		res.write("hi world");
+	} else if (req.url === "/count") {
+		res.write(count);
 		res.end();
 	} else {
 		res.write("404 not found");
