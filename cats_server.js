@@ -21,7 +21,7 @@ var server = http.createServer(function(req, res) {
 
 //counts the number of visits to my cat webpage
 	function countCatVisits(fileName, res){
-		// read count_cat_visits and count the visits
+// read count_cat_visits and count the visits
 		fs.readFile(fileName, function(err, data){
 			var count= parseInt(data);
 			if(isNaN(count)){
@@ -33,7 +33,7 @@ var server = http.createServer(function(req, res) {
 			}else {
 				count = count +1;
 			}
-		// write to the count_cat_visits
+// write to the count_cat_visits
 			fs.writeFile(fileName, count, function(err){
 				if (err){
 					console.log("couldn't write file");
