@@ -11,7 +11,7 @@ var server = http.createServer(function(req, res) {
 		cats('./cat_page.html',res);
 		countCatVisits('./count_cat_visits.html',res);
 	} else if (req.url === "/count") {
-		res.write(count);
+		res.write(countCatVisits());
 		res.end();
 	} else {
 		res.write("404 not found");
